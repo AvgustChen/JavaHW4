@@ -82,6 +82,19 @@ public class model {
                 minMax = map[fX][fY - 1];
             }
 
+            if (minMax <= map[fX - 1][fY - 1]) {
+                minMax = map[fX - 1][fY - 1];
+            }
+            if (minMax <= map[fX + 1][fY - 1]) {
+                minMax = map[fX + 1][fY - 1];
+            }
+            if (minMax <= map[fX + 1][fY + 1]) {
+                minMax = map[fX + 1][fY + 1];
+            }
+            if (minMax <= map[fX - 1][fY + 1]) {
+                minMax = map[fX - 1][fY + 1];
+            }
+
             if (map[fX - 1][fY] > 0 && map[fX - 1][fY] != -1) {
                 if (minMax >= map[fX - 1][fY]) {
                     minMax = map[fX - 1][fY];
@@ -108,6 +121,35 @@ public class model {
                     minMax = map[fX][fY - 1];
                     min[0] = fX;
                     min[1] = fY - 1;
+                }
+            }
+
+            if (map[fX - 1][fY - 1] > 0 && map[fX - 1][fY - 1] != -1) {
+                if (minMax >= map[fX - 1][fY - 1]) {
+                    minMax = map[fX - 1][fY - 1];
+                    min[0] = fX - 1;
+                    min[1] = fY - 1;
+                }
+            }
+            if (map[fX + 1][fY - 1] > 0 && map[fX + 1][fY - 1] != -1) {
+                if (minMax >= map[fX + 1][fY - 1]) {
+                    minMax = map[fX + 1][fY - 1];
+                    min[0] = fX + 1;
+                    min[1] = fY - 1;
+                }
+            }
+            if (map[fX + 1][fY + 1] > 0 && map[fX + 1][fY + 1] != -1) {
+                if (minMax >= map[fX + 1][fY + 1]) {
+                    minMax = map[fX + 1][fY + 1];
+                    min[0] = fX + 1;
+                    min[1] = fY + 1;
+                }
+            }
+            if (map[fX - 1][fY + 1] > 0 && map[fX - 1][fY + 1] != -1) {
+                if (minMax >= map[fX - 1][fY + 1]) {
+                    minMax = map[fX - 1][fY + 1];
+                    min[0] = fX - 1;
+                    min[1] = fY  + 1;
                 }
             }
         } catch (ArrayIndexOutOfBoundsException ae) {
