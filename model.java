@@ -55,8 +55,8 @@ public class model {
             min = findMinAndShortWay(map, fX, fY);
             fX = min[0];
             fY = min[1];
-            if (map[fX][fY] == 1) {
-                map[fX][fY] = way;
+            if (map[fX][fY] == -2) {
+                // map[fX][fY] = way;
                 break;
             }
             map[fX][fY] = way;
@@ -95,28 +95,28 @@ public class model {
                 minMax = map[fX - 1][fY + 1];
             }
 
-            if (map[fX - 1][fY] > 0 && map[fX - 1][fY] != -1) {
+            if (map[fX - 1][fY] >= -2 && map[fX - 1][fY] != -1) {
                 if (minMax >= map[fX - 1][fY]) {
                     minMax = map[fX - 1][fY];
                     min[0] = fX - 1;
                     min[1] = fY;
                 }
             }
-            if (map[fX + 1][fY] > 0 && map[fX + 1][fY] != -1) {
+            if (map[fX + 1][fY] >= -2 && map[fX + 1][fY] != -1) {
                 if (minMax >= map[fX + 1][fY]) {
                     minMax = map[fX + 1][fY];
                     min[0] = fX + 1;
                     min[1] = fY;
                 }
             }
-            if (map[fX][fY + 1] > 0 && map[fX][fY + 1] != -1) {
+            if (map[fX][fY + 1] >= -2 && map[fX][fY + 1] != -1) {
                 if (minMax >= map[fX][fY + 1]) {
                     minMax = map[fX][fY + 1];
                     min[0] = fX;
                     min[1] = fY + 1;
                 }
             }
-            if (map[fX][fY - 1] > 0 && map[fX][fY - 1] != -1) {
+            if (map[fX][fY - 1] >= -2 && map[fX][fY - 1] != -1) {
                 if (minMax >= map[fX][fY - 1]) {
                     minMax = map[fX][fY - 1];
                     min[0] = fX;
@@ -124,32 +124,32 @@ public class model {
                 }
             }
 
-            if (map[fX - 1][fY - 1] > 0 && map[fX - 1][fY - 1] != -1) {
+            if (map[fX - 1][fY - 1] >= -2 && map[fX - 1][fY - 1] != -1) {
                 if (minMax >= map[fX - 1][fY - 1]) {
                     minMax = map[fX - 1][fY - 1];
                     min[0] = fX - 1;
                     min[1] = fY - 1;
                 }
             }
-            if (map[fX + 1][fY - 1] > 0 && map[fX + 1][fY - 1] != -1) {
+            if (map[fX + 1][fY - 1] >= -2 && map[fX + 1][fY - 1] != -1) {
                 if (minMax >= map[fX + 1][fY - 1]) {
                     minMax = map[fX + 1][fY - 1];
                     min[0] = fX + 1;
                     min[1] = fY - 1;
                 }
             }
-            if (map[fX + 1][fY + 1] > 0 && map[fX + 1][fY + 1] != -1) {
+            if (map[fX + 1][fY + 1] >= -2 && map[fX + 1][fY + 1] != -1) {
                 if (minMax >= map[fX + 1][fY + 1]) {
                     minMax = map[fX + 1][fY + 1];
                     min[0] = fX + 1;
                     min[1] = fY + 1;
                 }
             }
-            if (map[fX - 1][fY + 1] > 0 && map[fX - 1][fY + 1] != -1) {
+            if (map[fX - 1][fY + 1] >= -2 && map[fX - 1][fY + 1] != -1) {
                 if (minMax >= map[fX - 1][fY + 1]) {
                     minMax = map[fX - 1][fY + 1];
                     min[0] = fX - 1;
-                    min[1] = fY  + 1;
+                    min[1] = fY + 1;
                 }
             }
         } catch (ArrayIndexOutOfBoundsException ae) {
